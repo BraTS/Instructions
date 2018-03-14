@@ -1,4 +1,4 @@
-# Instructions
+# Dockerization Instructions for the BraTS Algorithmic Repository
 Instructions on how to dockerize your algorithm, as applied in the BraTS challenge
 
 # Dockerization / Containerization
@@ -16,3 +16,8 @@ All test sets will be identical to the 2016 or 2017 test data that you have alre
 Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the ‘fla.nii.gz’, ‘t1c.nii.gz’, ‘t1.nii.gz’, ‘t2.nii.gz’ volumes, will be linked to /data and your segmentations must be placed in /data/results. Results should be a NIfTI file with the same resolution as the input data. Please call the resulting file "tumor_’your_image’_class.nii.gz", where ‘your_image’ is an eight digit identifier of your algorithm. If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., "tumor_’your_image’_prob_4.nii.gz" for results of class 4. If your algorithm returns tissue classes, please use “tissue_’your_name’_wm.nii.gz” for white matter (*‘_gm.nii.gz’ and ‘*_csf.nii.gz’ for the other two).
 
 There should be no interaction with the container required other than running the Docker command below, i.e., we can only support fully automatic algorithms.
+
+# Computing environment & resources, GPUs
+We will run your container on a selection of test cases from the BraTS 2016 data sets, based on the quality of their skull-stripping. Docker can set resource limits on containers. Please give us an indication how many CPUs and how much RAM is needed for you method, and what the resulting computation time will be.
+
+In our first instalment, we would like to run all code CPU-only to retain compatibility. Docker does not yet support GPU mapping on all platforms, so please provide a CPU-only version of you code. If you really want/need to use a GPU, please contact us.
