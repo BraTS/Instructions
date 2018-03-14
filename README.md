@@ -1,4 +1,4 @@
-# Dockerization Instructions for the BraTS Algorithmic Repository
+# Dockerization Instructions
 Instructions on how to dockerize your algorithm, as applied in the BraTS challenge
 
 # Dockerization / Containerization
