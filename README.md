@@ -21,3 +21,17 @@ There should be no interaction with the container required other than running th
 We will run your container on a selection of test cases from the BraTS 2016 data sets, based on the quality of their skull-stripping. Docker can set resource limits on containers. Please give us an indication how many CPUs and how much RAM is needed for you method, and what the resulting computation time will be.
 
 In our first instalment, we would like to run all code CPU-only to retain compatibility. Docker does not yet support GPU mapping on all platforms, so please provide a CPU-only version of you code. If you really want/need to use a GPU, please contact us.
+
+#Running your Docker / Docker commands
+Your container will be run with the following commands:
+
+docker run −v <directory>:/data −it <your image> <your script call>
+
+“directory" will be our test directory containing the four modalities and the empty folder for your results.
+
+"your image" is the name of your Docker image.
+
+"your script call" is the script that should be called when running the container.
+
+# Assistance
+If you are unsure whether your method can be containerized or how to proceed, please contact us in advance. We will try to help you with Docker.
