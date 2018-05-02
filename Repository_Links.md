@@ -9,7 +9,7 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 ### Algorithms
 | `<repo>/<image>`       | Author          | Licensing | Link | Paper |
 | ------------------ |---------------| --------------| ----------| ------- |
-| `kamleshp/brats17` | Kamlesh Pawar | Contact the author | https://hub.docker.com/r/kamleshp/brats17/ | <link missing> |
+| `kamleshp/brats17` | Kamlesh Pawar | Contact the author | <a href="https://hub.docker.com/r/kamleshp/brats17/">Docker Hub link</a> | <link missing> |
 | `brats_dc`| Guotai Wang | Contact the author | https://cmiclab.cs.ucl.ac.uk/gwang/brats_dc | Guotai Wang, Wenqi Li, Sebastien Ourselin, Tom Vercauteren. "Automatic Brain Tumor Segmentation using Cascaded Anisotropic Convolutional Neural Networks." arXiv preprint arXiv:1710.04043 (2017). https://arxiv.org/abs/1709.00382 |
 | `mikaelagn/magnrbm`| Mikael Agn | Contact the author | https://hub.docker.com/r/mikaelagn/magnrbm/ |<link missing> |
 | `romainsauvestre/gevaertlab` | Romain Sauvestre | Contact the author | https://hub.docker.com/r/romainsauvestre/gevaertlab/ | <link missing>
