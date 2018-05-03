@@ -9,6 +9,8 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 <b><u>For licensing information, please contact the individual authors linked below.</b></u>
 
 ### Algorithms
+
+#### Native Docker (CPU-only)
 | `<repo>/<image>`       | Author          | Author's Link | Paper |
 | ------------------ |---------------|----------| ------- |
 | `kamleshp/brats17` | Kamlesh Pawar | <a href="https://hub.docker.com/r/kamleshp/brats17/">Docker Hub link</a> | Kamlesh Pawar, Zhaolin Chen, N. Jon Shah, Gary Egan. Residual Encoder and Convolutional Decoder Neural Network for Glioma Segmentation. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_23">LNCS paper link</a> |
@@ -19,7 +21,11 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 | `ekrivov/brats2017_old` | Egor Krivov | <a href="https://hub.docker.com/r/ekrivov/brats2017_old/">Docker Hub link</a> | Egor Krivov, Maxim Pisov, Mikhail Belyaev. MRI Augmentation via Elastic Registration for Brain Lesions Segmentation. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_32">LNCS paper link</a> |
 | `silvanac/uniandes` | Luis C. Rivera Monroy | <a href="https://hub.docker.com/r/silvanac/uniandes/">Docker Hub link</a> | Laura Silvana Castillo, Laura Alexandra Daza, Luis Carlos Rivera, Pablo Arbelaez. Brain Tumor Segmentation and Parsing on MRIs Using Multiresolution Neural Networks. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_29">LNCS paper link</a> |
 | `changken1/qtimlabbrats_final` | Ken Chang | <a href="https://hub.docker.com/r/changken1/qtimlabbrats_final/">Docker Hub link</a> | <link missing> |
-| `fabianisensee/brats2017_isensee` | Fabian Isensee | <a href="https://github.com/MIC-DKFZ/BraTS2017">Github link</a> | Fabian Isensee, Philipp Kickingereder, Wolfgang Wick, Martin Bendszus, Klaus H. Maier-Hein. Brain Tumor Segmentation and Radiomics Survival Prediction: Contribution to the BRATS 2017 Challenge. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_25">LNCS paper link</a> |
+
+#### Nvidia-Docker (GPU-support needed)
+| `<repo>/<image>`       | Author          | Author's Link | Paper |
+| ------------------ |---------------|----------| ------- |
+| `fabianisensee/brats2017_isensee` | Fabian Isensee | <a href="https://hub.docker.com/r/fabianisensee/brats2017_isensee/">Docker Hub link</a> | Fabian Isensee, Philipp Kickingereder, Wolfgang Wick, Martin Bendszus, Klaus H. Maier-Hein. Brain Tumor Segmentation and Radiomics Survival Prediction: Contribution to the BRATS 2017 Challenge. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_25">LNCS paper link</a> |
 
 More to come soon. If you would like to add your BRATS challenge implementation in Docker here, please contact us.
 
