@@ -2,7 +2,7 @@
 
 This is a repository of links to Docker images that conform to the BRATS Challenge Interface requirements for Docker containers and have been tested successfully.
 
-We will soon add a single Docker Hub BraTS page with all available images.
+The official Docker Hub page for BraTS 2018 is <a href="https://hub.docker.com/u/brats/">now online</a>. If you would like your Docker image to be hosted here, please contact us.
 
 To use the images, pull them using `docker pull <repo>/<image>` and then run them according to the instructions provided in `README.md` and the `BRATS_Docker_Interface.pdf` file.
 
