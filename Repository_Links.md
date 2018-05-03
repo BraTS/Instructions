@@ -21,6 +21,7 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 | `ekrivov/brats2017_old` | Egor Krivov | <a href="https://hub.docker.com/r/ekrivov/brats2017_old/">Docker Hub link</a> | Egor Krivov, Maxim Pisov, Mikhail Belyaev. MRI Augmentation via Elastic Registration for Brain Lesions Segmentation. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_32">LNCS paper link</a> |
 | `silvanac/uniandes` | Luis C. Rivera Monroy | <a href="https://hub.docker.com/r/silvanac/uniandes/">Docker Hub link</a> | Laura Silvana Castillo, Laura Alexandra Daza, Luis Carlos Rivera, Pablo Arbelaez. Brain Tumor Segmentation and Parsing on MRIs Using Multiresolution Neural Networks. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_29">LNCS paper link</a> |
 | `changken1/qtimlabbrats_final` | Ken Chang | <a href="https://hub.docker.com/r/changken1/qtimlabbrats_final/">Docker Hub link</a> | <link missing> |
+| `brats/brats_ac` | Adrià Casamitjana | <a href="https://hub.docker.com/r/brats/brats_ac/">Docker Hub link</a> | 3D Convolutional Neural Networks for Brain Tumor Segmentation: A Comparison of Multi-resolution Architectures <a href="https://link.springer.com/chapter/10.1007/978-3-319-55524-9_15"> LCNS paper link </a> |
 
 #### Nvidia-Docker (GPU-support needed)
 | `<repo>/<image>`       | Author          | Author's Link | Paper |
