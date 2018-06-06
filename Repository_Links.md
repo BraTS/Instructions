@@ -28,6 +28,7 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 | `<repo>/<image>`       | Author          | Author's Link | Paper |
 | ------------------ |---------------|----------| ------- |
 | `fabianisensee/brats2017_isensee` | Fabian Isensee | <a href="https://hub.docker.com/r/fabianisensee/brats2017_isensee/">Docker Hub link</a> | Fabian Isensee, Philipp Kickingereder, Wolfgang Wick, Martin Bendszus, Klaus H. Maier-Hein. Brain Tumor Segmentation and Radiomics Survival Prediction: Contribution to the BRATS 2017 Challenge. <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-75238-9_25">LNCS paper link</a> |
+| `libphy/brats17ens9` | Geena Kim | <a href="https://hub.docker.com/r/libphy/brats17ens9/">Docker Hub link</a> | Kim G. (2018) Brain Tumor Segmentation Using Deep Fully Convolutional Neural Networks. In: Crimi A., Bakas S., Kuijf H., Menze B., Reyes M. (eds) Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries. BrainLes 2017. Lecture Notes in Computer Science, vol 10670. <a href="https://link.springer.com/chapter/10.1007/978-3-319-75238-9_30">LNCS paper link</a> |
 
 More to come soon. If you would like to add your BRATS challenge implementation in Docker here, please contact us.
 
