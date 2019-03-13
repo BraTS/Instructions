@@ -8,8 +8,15 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 
 <b><u>For licensing information, please contact the individual authors linked below.</b></u>
 
-### Algorithms
+## Available Docker Containers
 
+### BraTS 2018
+
+
+Most Dockers for segmentations of the BraTS 2018 challenge are hosted on our own <a href="https://hub.docker.com/u/brats/"> Docker Hub Page </a>. Please check that page for the newest versions of our images. Please read the description of the individual images to obtain usage instructions. A detailed list of images will follow here soon.
+
+
+### BraTS 2017
 #### Native Docker (CPU-only)
 | `<repo>/<image>`       | Author          | Author's Link | Paper |
 | ------------------ |---------------|----------| ------- |
