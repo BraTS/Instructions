@@ -1,7 +1,7 @@
 # Docker BRATS
 **This is an extended version of the informational text that can be found here: https://www.med.upenn.edu/sbia/brats2017/algorithms.html**
 
-**For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md **
+**For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md**
 
 
 ## Introduction
