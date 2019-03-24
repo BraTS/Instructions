@@ -1,6 +1,9 @@
 # Docker BRATS
 **This is an extended version of the informational text that can be found here: https://www.med.upenn.edu/sbia/brats2017/algorithms.html**
 
+**For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md **
+
+
 ## Introduction
 
 **In a nutshell:** We would like to have your algorithms in a Docker container, as well as in their original source code. We intend to run your dockerized algorithm on the BraTS 2016 test dataset to compare segmentation results as part of the BraTS'14-'16 journal manuscript, and to make all contributed Docker containers available through the upcoming BraTS algorithmic repository. Your source code will not be distributed and will only be used internally by the BraTS organizers, as a proof of code ownership (contact us if you cannot share your source code).
