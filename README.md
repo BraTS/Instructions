@@ -51,7 +51,7 @@ Because your container runs in an isolated environment, the data needs to be map
 
 There should be no interaction with the container required other than running the Docker command below.
 
-Your code *must* accept the files *exactly* as shown here:
+Your code **must** accept the files *exactly* as shown here:
 - fla.nii.gz
 - t1c.nii.gz
 - t1.nii.gz
@@ -63,9 +63,8 @@ We will run your container on a selection on test cases. Docker can set resource
 
 ### GPU computation
 
-**Update: You may also submit a NVIDIA-Docker container, but CPU-only is still preferred if possible (or both).**
+If your model runs faster on a GPU, please use Nvidia-Docker as the basis for your container. When submitting, please also submit the minimum GPU requirements needed for inference. For Instructions see below:
 
-In our first instalment, we would like to run all code CPU-only to retain compatibility. Docker does not yet support GPU mapping on all platforms, so please provide a CPU-only version of you code. If you really want/need to use a GPU, please contact us.
 
 ### NVIDIA-Docker
 The procedure of creating a Docker container with support for GPU computations is similar to the approach for normal Docker containers. To create a NVIDIA-Docker container, please follow the instructions from NVIDIA themselves:
@@ -79,12 +78,11 @@ If you have additional questions or troubles using NVIDIA-Docker, please contact
 
 ### Examples
 
-To help you containerize your segmentation method with Docker, we will provide some examples.
+To help you containerize your segmentation method with Docker, we will provide some examples: see the [BraTS Algorithmic Repository](https://github.com/BraTS/Instructions/blob/master/Repository_Links.md#brats-algorithmic-repository) for last year's implementations and run them to see how they work.
 
 ### Assistance
 
 If you are unsure whether your method can be containerized or how to proceed, please contact us in advance. We will try to help you with Docker.  
-We have created a PDF-Document containing the exact specifications which you can download here: https://github.com/njarng/docker_brats/raw/master/BRATS_Docker_Interface.pdf
 
 **Also, be sure to check out the documentation on the Docker website.**
 
