@@ -28,7 +28,7 @@ Dockerization is a very popular concept and has been used successfully in previo
 
 There are Dockerfiles as examples in this repository. They use the python:2.7 image as base and then install dependencies and finally copy the relevant files from the host to the container. The process itself should be pretty intuitive.
 Steps:
-1. Create a script for your segmentation code that reads the 4 modalities (either nii or nii.gz) from `/data`, performs the segmentation and writes the result back to `/data/results` in either nii or nii.gz format. For further naming instructions, please consult the **BRATS_Docker_Interface.pdf** file in this repository.
+1. Create a script for your segmentation code that reads the 4 modalities (Format: .nii.gz) from `/data`, performs the segmentation and writes the result back to `/data/results` in nii.gz format. For further naming instructions, please consult the **BRATS_Docker_Interface.pdf** file in this repository.
 2. Create a Dockerfile that uses a base image, installs all necessary dependencies and then copies your code and the script from step 1 to the container.
 3. Run `docker build .< Dockerfile` in the directory where your Dockerfile, your code and your script reside.
 4. After building, your container should be able to take input via the `-v <host_directory>:/data` mount command and perform your segmentation.
@@ -45,11 +45,17 @@ Further instructions can be found here:
 
 ### Data access
 
-All test sets will be identical to the 2016 or 2017 test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named ‘flair.nii.gz’, ‘t1c.nii.gz’, ‘t1.nii.gz’, ‘t2.nii.gz’. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
+All test sets will be identical to the 2016 or 2017 test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named ‘fla.nii.gz’, ‘t1c.nii.gz’, ‘t1.nii.gz’, ‘t2.nii.gz’. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
 
-Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the ‘flair.nii.gz’, ‘t1c.nii.gz’, ‘t1.nii.gz’, ‘t2.nii.gz’ volumes, will be linked to /data and your segmentations must be placed in /data/results. Results should be a NIfTI file with the same resolution as the input data. Please call the resulting file "tumor\_'your_image'\_class.nii.gz", where ‘your\_image’ is an eight character identifier of your algorithm (id of your container, title of your code/project). If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., "tumor\_'your_image'\_prob_4.nii.gz" for results of class 4. If your algorithm returns tissue classes, please use “tissue\_’your_name’\_wm.nii.gz” for white matter (\*'\_gm.nii.gz' and ''\*\_csf.nii.gz' for the other two).
+Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the ‘fla.nii.gz’, ‘t1c.nii.gz’, ‘t1.nii.gz’, ‘t2.nii.gz’ volumes, will be linked to /data and your segmentations must be placed in /data/results. Results should be a NIfTI file with the same resolution as the input data. Please call the resulting file "tumor\_'your_image'\_class.nii.gz", where ‘your\_image’ is an eight character identifier of your algorithm (id of your container, title of your code/project). If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., "tumor\_'your_image'\_prob_4.nii.gz" for results of class 4. If your algorithm returns tissue classes, please use “tissue\_’your_name’\_wm.nii.gz” for white matter (\*'\_gm.nii.gz' and ''\*\_csf.nii.gz' for the other two).
 
 There should be no interaction with the container required other than running the Docker command below.
+
+Your code **must** accept the files *exactly* as shown here:
+- fla.nii.gz
+- t1c.nii.gz
+- t1.nii.gz
+- t2.nii.gz
 
 ### Computing environment & Resources
 
@@ -57,9 +63,8 @@ We will run your container on a selection on test cases. Docker can set resource
 
 ### GPU computation
 
-**Update: You may also submit a NVIDIA-Docker container, but CPU-only is still preferred if possible (or both).**
+If your model runs faster on a GPU, please use Nvidia-Docker as the basis for your container. When submitting, please also submit the minimum GPU requirements needed for inference. For Instructions see below:
 
-In our first instalment, we would like to run all code CPU-only to retain compatibility. Docker does not yet support GPU mapping on all platforms, so please provide a CPU-only version of you code. If you really want/need to use a GPU, please contact us.
 
 ### NVIDIA-Docker
 The procedure of creating a Docker container with support for GPU computations is similar to the approach for normal Docker containers. To create a NVIDIA-Docker container, please follow the instructions from NVIDIA themselves:
@@ -73,12 +78,11 @@ If you have additional questions or troubles using NVIDIA-Docker, please contact
 
 ### Examples
 
-To help you containerize your segmentation method with Docker, we will provide some examples.
+To help you containerize your segmentation method with Docker, we will provide some examples: see the [BraTS Algorithmic Repository](https://github.com/BraTS/Instructions/blob/master/Repository_Links.md#brats-algorithmic-repository) for last year's implementations and run them to see how they work.
 
 ### Assistance
 
 If you are unsure whether your method can be containerized or how to proceed, please contact us in advance. We will try to help you with Docker.  
-We have created a PDF-Document containing the exact specifications which you can download here: https://github.com/njarng/docker_brats/raw/master/BRATS_Docker_Interface.pdf
 
 **Also, be sure to check out the documentation on the Docker website.**
 
