@@ -3,6 +3,7 @@
 
 **For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md**
 
+**If you have any problems, please open an issue (preferred) or contact us via email.**
 
 ## Introduction
 
@@ -45,9 +46,9 @@ Further instructions can be found here:
 
 ### Data access
 
-All test sets will be identical to the 2016 or 2017 test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named with the patient ID followed by `*_flair.nii.gz`, `*_t1c.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz`. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
+All test sets will be identical to the 2019 training/validation/test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named with the case ID followed by `*_flair.nii.gz`, `*_t1c.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz`. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
 
-Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the `*_flair.nii.gz`, `*_t1c.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz` volumes will be linked to `/data` and your segmentations must be placed in `/data/results`. Results should be a NIfTI file with the same resolution as the input data. Please call the resulting file `tumor\_'your_image'\_class.nii.gz`, where ‘your\_image’ is an eight character identifier of your algorithm (id of your container, title of your code/project). If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., "tumor\_'your_image'\_prob_4.nii.gz" for results of class 4. If your algorithm returns tissue classes, please use “tissue\_’your_name’\_wm.nii.gz” for white matter (\*'\_gm.nii.gz' and ''\*\_csf.nii.gz' for the other two).
+Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the `*_flair.nii.gz`, `*_t1c.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz` volumes will be linked to `/data` and your segmentations must be placed in `/data/results`. Results should be a NIfTI file with the same resolution as the input data. **Please call the resulting file `tumor_your_image_class.nii.gz`, where `your_image` is an eight character identifier of your algorithm (id of your container, title of your code/project)**. If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., `tumor\_'your_image'\_prob_4.nii.gz for results of class 4. If your algorithm returns tissue classes, please use `tissue_your_name_wm.nii.gz` for white matter (`*_gm.nii.gz` and `*_csf.nii.gz` for the other two).
 
 There should be no interaction with the container required other than running the Docker command below.
 
@@ -59,7 +60,7 @@ Your code **must** accept the files *exactly* as shown here:
 
 ### Computing environment & Resources
 
-We will run your container on a selection on test cases. Docker can set resource limits on containers. Please give us an indication how many CPUs and how much RAM is needed for you method, and what the resulting computation time will be.
+We will run your container on a selection on test cases. Docker can set resource limits on containers. Please give us an indication how many CPU cores and how much RAM is needed for you method, and what the resulting computation time will be (so we can estimate a timeout).
 
 ### GPU computation
 
@@ -74,9 +75,9 @@ Github Repo: https://github.com/NVIDIA/nvidia-docker
 
 We will be using Nvidia-Docker 2 to test containers with GPU support, so please make sure that a call with `docker run --runtime=nvidia ...` works (even though the most recent version of the Docker engine includes native GPU support).
 
-**Your still need to follow the interface specifications provided above.** Please also submit performance indicators (computation time for the GPU/CPU used in your own tests) and the appropriate `nvidia-docker run`command in addition to the other infos required for a standard Docker implementation (see above).
+**Your still need to follow the interface specifications provided above.** Please also submit performance indicators (computation time for the GPU/CPU used in your own tests) and the appropriate `nvidia-docker run` command in addition to the other infos required for a standard Docker implementation (see above).
 
-If you have additional questions or troubles using NVIDIA-Docker, please contact us via e-mail (see PDF for address).
+If you have additional questions or troubles using NVIDIA-Docker, please contact us via e-mail (see bottom of this file) or open an issue (preferred).
 
 ### Examples
 
@@ -120,6 +121,8 @@ Please try to keep the resource usage to a minimum, we want to be able to use th
 This repository should provide some files and documents to aid in the containerization of BRATS methods.
 
 ### Additional documents
-This repository also contains the Docker interface definition (PDF) for Docker containers taking part in the MICCAI BRATS competition and a website markdown explaining the details for the participants.
+This repository also contains the legacy Docker interface definition (PDF - OUTDATED) for Docker containers taking part in the MICCAI BRATS 2017 competition and a markdown explaining the details for the participants. Please only follow the instructions here.
 
 **Please contact me in case of any questions or if you have remarks regarding the documents provided.**
+
+c.berger [at] tum [dot] de
