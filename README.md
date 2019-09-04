@@ -72,6 +72,8 @@ https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made
 
 Github Repo: https://github.com/NVIDIA/nvidia-docker
 
+We will be using Nvidia-Docker 2 to test containers with GPU support, so please make sure that a call with `docker run --runtime=nvidia ...` works (even though the most recent version of the Docker engine includes native GPU support).
+
 **Your still need to follow the interface specifications provided above.** Please also submit performance indicators (computation time for the GPU/CPU used in your own tests) and the appropriate `nvidia-docker run`command in addition to the other infos required for a standard Docker implementation (see above).
 
 If you have additional questions or troubles using NVIDIA-Docker, please contact us via e-mail (see PDF for address).
@@ -102,6 +104,15 @@ docker run −v <directory>:/data −it <your image> <your script call>
 "your image" is the name of your Docker image.  
 "your script call" is the script that should be called when running the container.
 
+### Our test system
+
+* Ubuntu 16.04.6 LTS
+* Docker version 19.03.0, build aeac949
+* GPU: Nvidia P100 PCIe, 16 VRAM
+* CPU: Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+* RAM: a lot, but please try to keep your usage in check
+
+Please try to keep the resource usage to a minimum, we want to be able to use the Docker containers on as many systems as possible (with lower specs).
 
 ## Notes regarding this repository
 
