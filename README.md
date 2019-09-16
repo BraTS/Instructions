@@ -1,5 +1,5 @@
 # Docker BRATS
-**This is an extended version of the informational text that can be found here: https://www.med.upenn.edu/sbia/brats2017/algorithms.html**
+**All relevant information regarding the BraTS challenge and detailed instruction for the tasks in general can be found here: http://braintumorsegmentation.org**
 
 **For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md**
 
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-**In a nutshell:** We would like to have your algorithms in a Docker container, as well as in their original source code. We intend to run your dockerized algorithm on the BraTS 2016 test dataset to compare segmentation results as part of the BraTS'14-'16 journal manuscript, and to make all contributed Docker containers available through the upcoming BraTS algorithmic repository. Your source code will not be distributed and will only be used internally by the BraTS organizers, as a proof of code ownership (contact us if you cannot share your source code).
+**In a nutshell:** We would like to have your algorithms in a Docker container, as well as in their original source code. We intend to run your dockerized algorithm on the BraTS 2019 test dataset to compare segmentation results as part of the BraTS manuscript, and to make all contributed Docker containers available through the BraTS algorithmic repository. Your source code will not be distributed and will only be used internally by the BraTS organizers, as a proof of code ownership (contact us if you cannot share your source code).
 
 Your algorithm should be able to generate a tumor segmentation on any multimodal brain scan that is preprocessed like a BraTS test subject. To allow for fair comparisons and assessing performance differences across algorithms, you are expected to indicate what training set you have used, during training and/or design of your algorithm, and in the case of private datasets, a description of those datasets.
 
@@ -27,14 +27,13 @@ Dockerization is a very popular concept and has been used successfully in previo
 
 ### Step for step instructions
 
-There are Dockerfiles as examples in this repository. They use the python:2.7 image as base and then install dependencies and finally copy the relevant files from the host to the container. The process itself should be pretty intuitive.
-Steps:
 1. Create a script for your segmentation code that reads the 4 imaging sequences (Format: .nii.gz) from `/data`, performs the segmentation and writes the result back to `/data/results` in nii.gz format.
 2. Create a Dockerfile that uses a base image, installs all necessary dependencies and then copies your code and the script from step 1 to the container.
 3. Run `docker build .< Dockerfile` in the directory where your Dockerfile, your code and your script reside.
 4. After building, your container should be able to take input via the `-v <host_directory>:/data` mount command and perform your segmentation.
 
 The full run command can be seen below. I suggest you read the introduction to Docker on their website: https://docs.docker.com/get-started/part2/
+
 Further instructions can be found here:
 - Python tutorial: https://runnable.com/docker/python/dockerize-your-python-application
 
@@ -46,15 +45,15 @@ Further instructions can be found here:
 
 ### Data access
 
-All test sets will be identical to the 2019 training/validation/test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named with the case ID followed by `*_flair.nii.gz`, `*_t1c.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz`. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
+All test sets will be identical to the 2019 training/validation/test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named with the case ID followed by `*_flair.nii.gz`, `*_t1ce.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz`. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
 
-Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the `*_flair.nii.gz`, `*_t1c.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz` volumes will be linked to `/data` and your segmentations must be placed in `/data/results`. Results should be a NIfTI file with the same resolution as the input data. **Please call the resulting file `tumor_your_image_class.nii.gz`, where `your_image` is an eight character identifier of your algorithm (id of your container, title of your code/project)**. If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., `tumor\_'your_image'\_prob_4.nii.gz for results of class 4. If your algorithm returns tissue classes, please use `tissue_your_name_wm.nii.gz` for white matter (`*_gm.nii.gz` and `*_csf.nii.gz` for the other two).
+Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the `*_flair.nii.gz`, `*_t1ce.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz` volumes will be linked to `/data` and your segmentations must be placed in `/data/results`. Results should be a NIfTI file with the same resolution as the input data. **Please call the resulting file `tumor_your_image_class.nii.gz`, where `your_image` is an eight character identifier of your algorithm (id of your container, title of your code/project)**. If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., `tumor\_'your_image'\_prob_4.nii.gz for results of class 4. If your algorithm returns tissue classes, please use `tissue_your_name_wm.nii.gz` for white matter (`*_gm.nii.gz` and `*_csf.nii.gz` for the other two).
 
 There should be no interaction with the container required other than running the Docker command below.
 
 Your code **must** accept the files *exactly* as shown here:
 - `*_flair.nii.gz`
-- `*_t1c.nii.gz`
+- `*_t1ce.nii.gz`
 - `*_t1.nii.gz`
 - `*_t2.nii.gz`
 

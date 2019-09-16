@@ -3,7 +3,17 @@
 Here is a short overview over all the filename conventions expected by various Docker containers used in the BraTS challenge. You can find the Docker images <a href="https://hub.docker.com/u/brats/">here</a> and every repository description has a data format given which the code in the container expects. Each algorithm works with 4 modalities: T1, T1c, T2 and FLAIR.
 Depending on which container you use, your inputs should be in the right format. The info below should help you figure out how your filenames should be specified for optimal operation.
 
-### General Info:
+### BraTS 2019 
+
+For this year's challenge, we only accept Docker images which support input conforming to the following format (same format as the provided dataset). In short, your code must be able to read and process the following files:  
+- `*_flair.nii.gz`
+- `*_t1ce.nii.gz`
+- `*_t1.nii.gz`
+- `*_t2.nii.gz`
+
+These 4 modalities will be made accessible in the directory `/data` when we run your Docker container and all resulting segmentation/survival files must be saved in the provided directory `/data/results`. 
+
+### Data format codes for past challenges and entries:
 **gz** for compressed, e.g. flair.nii.gz
 
 **b17** for files in the format as specified in the interface definition from last year's request for containers (e.g. flair.nii** without a subject prefix e.g. pat123_flair.nii.gz) and b18 for filenames as used in this year's validation set.
