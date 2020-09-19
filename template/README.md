@@ -1,6 +1,6 @@
 # BraTS Challenge 2020 Docker Submission Template
 
-Pleaseread this carefully, for feedback / questions please contact either Christoph Berger ( c [dot] berger [at] tum [dot] de ) or Florian Kofler ( florian [dot] kofler [at] tum [dot] de ).
+Pleaseread this carefully, for feedback / questions please contact either Christoph Berger https://github.com/christophbrgr or Florian Kofler https://github.com/neuronflow . ** However, the preferred way is to open an issue in this repository so you also help others. **
 
 This is the blueprint structure for BraTS 2020 Algorithmic repository submissions. Use the respective Dockerfiles for CUDA/CPU applications.
 
