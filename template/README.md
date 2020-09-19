@@ -36,12 +36,12 @@ docker build -t your_application_name . -f Dockerfile_CUDA
 ### run it for testing
 CPU:
 ```
-docker run -it --rm --name your_container_name -v "/your/input/folder/":"/app/data/input" -v "/your/output/folder":"/app/data/output/" your_application_name
+docker run -it --rm --name your_container_name -v "/your/input/folder/":"/app/data/"  your_application_name
 ```
 
 GPU:
 ```
-docker run -it --rm --gpus 0 --name your_container_name -v "/your/input/folder/":"/app/data/input" -v "/your/output/folder":"/app/data/output/" your_application_name
+docker run -it --rm --gpus 0 --name your_container_name -v "/your/input/folder/":"/app/data/" your_application_name
 ```
 
 ### save docker image
