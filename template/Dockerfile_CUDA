@@ -22,7 +22,6 @@ RUN pip3 install -r requirements.txt
 
 # copy all files
 COPY ./ ./
-RUN pip3 install -r requirements.txt
 RUN pip3 install -U python-dotenv
 
 ENTRYPOINT [ "python3","-u", "run.py"]
