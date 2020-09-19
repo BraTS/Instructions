@@ -1,13 +1,13 @@
 # Docker BRATS
 **All relevant information regarding the BraTS challenge and detailed instruction for the tasks in general can be found here: http://braintumorsegmentation.org**
 
-**For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md**
-
 **If you have any problems, please open an issue (preferred) or contact us via email.**
 
-## TL;DR
+## TL;DR:
 
-Head over to our template folder and download it to build from there. All instructions are in the files and the README.md there: 
+**Head over to our template folder and download it to build from there. All instructions are in the files and the README.md there: https://github.com/BraTS/Instructions/tree/master/template**
+
+Keep reading for the extended version. 
 
 ## Introduction
 
@@ -60,6 +60,8 @@ Your code **must** accept the files *exactly* as shown here:
 - `*_t1ce.nii.gz`
 - `*_t1.nii.gz`
 - `*_t2.nii.gz`
+
+**For the data format instructions, see this file here: https://github.com/BraTS/Instructions/blob/master/data_formats.md**
 
 ### Computing environment & Resources
 
