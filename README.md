@@ -5,9 +5,13 @@
 
 **If you have any problems, please open an issue (preferred) or contact us via email.**
 
+## TL;DR
+
+Head over to our template folder and download it to build from there. All instructions are in the files and the README.md there: 
+
 ## Introduction
 
-**In a nutshell:** We would like to have your algorithms in a Docker container, as well as in their original source code. We intend to run your dockerized algorithm on the BraTS 2019 test dataset to compare segmentation results as part of the BraTS manuscript, and to make all contributed Docker containers available through the BraTS algorithmic repository. Your source code will not be distributed and will only be used internally by the BraTS organizers, as a proof of code ownership (contact us if you cannot share your source code).
+**In a nutshell:** We would like to have your algorithms in a Docker container, as well as in their original source code. We intend to run your dockerized algorithm on the BraTS 2020 test dataset to compare segmentation results as part of the BraTS manuscript, and to make all contributed Docker containers available through the BraTS algorithmic repository. Your source code will not be distributed and will only be used internally by the BraTS organizers, as a proof of code ownership (contact us if you cannot share your source code).
 
 Your algorithm should be able to generate a tumor segmentation on any multimodal brain scan that is preprocessed like a BraTS test subject. To allow for fair comparisons and assessing performance differences across algorithms, you are expected to indicate what training set you have used, during training and/or design of your algorithm, and in the case of private datasets, a description of those datasets.
 
@@ -45,7 +49,7 @@ Further instructions can be found here:
 
 ### Data access
 
-All test sets will be identical to the 2019 training/validation/test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named with the case ID followed by `*_flair.nii.gz`, `*_t1ce.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz`. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
+All test sets will be identical to the 2020 training/validation/test data that you have already processed. They are co-registered, skull-stripped, resampled to 1mm^3 isotropic resolution, and aligned to the SRI space. Data will be in NIfTI GZIP Compressed Tar Archive (.nii.gz) format, with all header information except the spatial resolution removed, and the individual volumes will be named with the case ID followed by `*_flair.nii.gz`, `*_t1ce.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz`. You can use any of the BRATS training or testing image volumes to check whether your Docker image runs as expected.
 
 Because your container runs in an isolated environment, the data needs to be mapped into the container. The input data files, i.e., the `*_flair.nii.gz`, `*_t1ce.nii.gz`, `*_t1.nii.gz`, `*_t2.nii.gz` volumes will be linked to `/data` and your segmentations must be placed in `/data/results`. Results should be a NIfTI file with the same resolution as the input data. **Please call the resulting file `tumor_your_image_class.nii.gz`, where `your_image` is an eight character identifier of your algorithm (id of your container, title of your code/project)**. If your algorithm returns probabilities as well, you can return them accordingly, and name them, e.g., `tumor\_'your_image'\_prob_4.nii.gz for results of class 4. If your algorithm returns tissue classes, please use `tissue_your_name_wm.nii.gz` for white matter (`*_gm.nii.gz` and `*_csf.nii.gz` for the other two).
 
@@ -98,11 +102,10 @@ If you are unsure whether your method can be containerized or how to proceed, pl
 
 Your container will be run with the following commands:
 ~~~~
-docker run −v <directory>:/data −it <your image> <your script call>
+docker run --rm −v <directory>:/app/data −it <your image>
 ~~~~
 "directory" will be our test directory containing the four modalities and the empty folder for your results.  
-"your image" is the name of your Docker image.  
-"your script call" is the script that should be called when running the container.
+"your image" is the name of your Docker image. 
 
 ### Our test system
 
