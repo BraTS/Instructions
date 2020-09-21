@@ -1,4 +1,4 @@
-# Docker BRATS
+# Docker BRATS!
 **All relevant information regarding the BraTS challenge and detailed instruction for the tasks in general can be found here: http://braintumorsegmentation.org**
 
 **If you have any problems, please open an issue (preferred) or contact us via email.**
