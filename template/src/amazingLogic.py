@@ -7,9 +7,9 @@ import os
 
 
 def logicWrapper():
-    inputFileT1 = os.path.normpath(INPUT_FOLDER + "something_t1.nii.gz")
+    inputFileT1 = os.path.normpath(INPUT_FOLDER + "/something_t1.nii.gz")
     # ... do the same for t1c, flair and t2 here
-    outputFile = os.path.normpath(OUTPUT_FOLDER + "tumor_chuck_norris_class.nii.gz")
+    outputFile = os.path.normpath(OUTPUT_FOLDER + "/results/something_seg.nii.gz")
 
     # copy paste your amazing logic here
     print("wrapper: I can feel the magic happening..it feels like a little sun rising inside me!")
