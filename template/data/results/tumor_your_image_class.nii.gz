@@ -1,1 +1,3 @@
-This should be your segmentation nifti in exactly the same format as you uploaded it for the test!
+The provided segmentation labels should have values of 1 for NCR & NET, 2 for ED, 4 for ET, and 0 for everything else.
+
+Please call the resulting file tumor_your_image_class.nii.gz, where your_image is an eight character identifier of your algorithm (id of your container, title of your code/project).
