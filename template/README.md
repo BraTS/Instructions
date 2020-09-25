@@ -41,7 +41,7 @@ docker run -it --rm --name your_container_name -v "/your/input/folder/":"/app/da
 
 GPU:
 ```
-docker run -it --rm --gpus 0 --name your_container_name -v "/your/input/folder/":"/app/data/" your_application_name
+docker run -it --rm --gpus device=0 --name your_container_name -v "/your/input/folder/":"/app/data/" your_application_name
 ```
 
 ### save docker image
