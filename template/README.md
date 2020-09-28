@@ -5,9 +5,13 @@ Pleaseread this carefully, for feedback / questions please contact either Christ
 This is the blueprint structure for BraTS 2020 Algorithmic repository submissions. Use the respective Dockerfiles for CUDA/CPU applications.
 
 ## FAQ
-- code processes only a single patient?
+- This code processes only a single patient?
+
 Yes, we run our tests on multiple GPUs using an internal fork of https://github.com/neuronflow/BraTS-Toolkit . We spawn a container for every exam processed. This way it is easier for us to orchestrate and you don't need to worry about batch processing.
 
+- My code creates temporary files, do I need to worry about it?
+
+Only files under the /data/ directory are persisted as long as you don't save your temporary files there, you don't need to worry about housekeeping.
 
 ## copy paste your code
 
