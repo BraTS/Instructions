@@ -38,7 +38,7 @@ docker build -t your_application_name . -f Dockerfile_CUDA
 
 ```
 
-ATTENTION: make sure you build your docker without sudo, otherwise it will run as a root user and they files will belong to root, please see: https://vsupalov.com/docker-shared-permissions/
+ATTENTION: make sure you build your docker **without sudo**, otherwise it will run as a root user and they files will belong to root, please see: https://vsupalov.com/docker-shared-permissions/
 
 ### run it for testing
 CPU:
