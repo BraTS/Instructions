@@ -4,6 +4,11 @@ Pleaseread this carefully, for feedback / questions please contact either Christ
 
 This is the blueprint structure for BraTS 2020 Algorithmic repository submissions. Use the respective Dockerfiles for CUDA/CPU applications.
 
+## FAQ
+- code processes only a single patient?
+Yes, we run our tests on multiple GPUs using an internal fork of https://github.com/neuronflow/BraTS-Toolkit . We spawn a container for every exam processed. This way it is easier for us to orchestrate and you don't need to worry about batch processing.
+
+
 ## copy paste your code
 
 look through the repo. fill in the code at the places indicated by the comments.
@@ -32,6 +37,8 @@ GPU:
 docker build -t your_application_name . -f Dockerfile_CUDA
 
 ```
+
+ATTENTION: make sure you build your docker without sudo, otherwise it will run as a root user and they files will belong to root, please see: https://vsupalov.com/docker-shared-permissions/
 
 ### run it for testing
 CPU:
