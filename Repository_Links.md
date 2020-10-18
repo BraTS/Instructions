@@ -13,7 +13,12 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 ### BraTS 2018
 
 
-Most Dockers for segmentations of the BraTS 2018 challenge are hosted on our own <a href="https://hub.docker.com/u/brats/"> Docker Hub Page </a>. Please check that page for the newest versions of our images. Please read the description of the individual images to obtain usage instructions. A detailed list of images will follow here soon.
+All public survival and segmentation Dockers of the BraTS 2019 challenge are hosted on our own <a href="https://hub.docker.com/u/brats/"> Docker Hub Page </a>. Please check that page for the newest versions of our images. Please read the description of the individual images to obtain usage instructions.
+
+### BraTS 2018
+
+
+Most Dockers for segmentations of the BraTS 2018 challenge are hosted on our own <a href="https://hub.docker.com/u/brats/"> Docker Hub Page </a>. Please check that page for the newest versions of our images. Please read the description of the individual images to obtain usage instructions.
 
 
 ### BraTS 2017
