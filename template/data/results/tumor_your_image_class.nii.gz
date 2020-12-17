@@ -1,3 +1,0 @@
-The provided segmentation labels should have values of 1 for NCR, 2 for ED, 4 for ET, and 0 for everything else.
-
-Please call the resulting file tumor_your_image_class.nii.gz, where your_image is an eight character identifier of your algorithm (id of your container, title of your code/project).
