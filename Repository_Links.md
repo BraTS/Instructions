@@ -10,6 +10,16 @@ To use the images, pull them using `docker pull <repo>/<image>` and then run the
 
 ## Available Docker Containers
 
+###
+If your are not interested in the mechanics of particular dockers and are mainly interested in creating glioma segmentations check out: https://github.com/neuronflow/BraTS-Toolkit
+
+BraTS Toolkit provides an easy to use abstraction layer to orchestrate docker submissions from 2020, 2019 and 2018.
+
+### BraTS 2020
+
+
+All public survival and segmentation Dockers of the BraTS 2020 challenge are hosted on our own <a href="https://hub.docker.com/u/brats/"> Docker Hub Page </a>. Please check that page for the newest versions of our images. Please read the description of the individual images to obtain usage instructions.
+
 ### BraTS 2019
 
 
@@ -45,4 +55,4 @@ Most Dockers for segmentations of the BraTS 2018 challenge are hosted on our own
 More to come soon. If you would like to add your BRATS challenge implementation in Docker here, please contact us.
 
 #### Contact
-Author: C. Berger
+Author: C. Berger, Florian Kofler, Spyridon Bakas, Bjoern Menze
