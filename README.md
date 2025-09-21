@@ -4,7 +4,7 @@
 > [!IMPORTANT]  
 > These instructions are outdated. Please have a look at the respective challenge websites to find up-to-date instructions for the BraTS cluster of challenges.
 > [BraTS Orchestrator](https://github.com/BrainLesion/BraTS) provides access to BraTS 2023+ algorithms.
-> Legacy challenge algorithms (for which these instructions were written are available via BraTS [BraTS Toolkit](https://github.com/neuronflow/BraTS-Toolkit).
+> Legacy challenge algorithms (for which these instructions were written) are available via BraTS [BraTS Toolkit](https://github.com/neuronflow/BraTS-Toolkit).
 
 
 **If you have any problems, please open an issue (preferred) or contact us via email.**
